@@ -60,7 +60,7 @@
   let currentResource, rootResource, modifierView, bottomLeftPane;
   let prevSelectedForAutoIdentify = undefined;
 
-  // Keeps expand/collapse state 
+  // Keeps expand/collapse state
   // reloads children so the tree matches post-identify models.
   function refreshResourceTreeChildren(resourceId, resource) {
     resourceNodeDataMap.update((map) => {
@@ -111,7 +111,11 @@
 
   // Run identify on the selected resource if it is not
   // already identified.
-  $: if (showRootResource && $selected !== undefined && resources[$selected] !== undefined) {
+  $: if (
+    showRootResource &&
+    $selected !== undefined &&
+    resources[$selected] !== undefined
+  ) {
     const id = $selected;
     const res = resources[id];
     if (id !== prevSelectedForAutoIdentify) {
